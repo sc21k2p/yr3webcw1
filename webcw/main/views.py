@@ -191,7 +191,7 @@ def rate(request):
             
             rating_entry = StudentProfessorRating.objects.create(student_id = student_value, professor_id=prof_value, module_instance_id=module_instance_value, rating=rating)
 
-            return JsonResponse({'message': 'User registered successfully!'}, status=201)
+            return JsonResponse({'message': 'Rating entered successfully!'}, status=201)
         except Exception as e:
             return JsonResponse({'error': str(e)}, status=400)
     return JsonResponse({'error': 'Invalid request method'}, status=405)
